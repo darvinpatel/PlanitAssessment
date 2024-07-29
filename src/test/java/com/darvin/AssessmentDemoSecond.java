@@ -1,14 +1,13 @@
 package com.darvin;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import java.util.concurrent.TimeUnit;
+import java.time.Duration;
 
 public class AssessmentDemoSecond {
 
@@ -23,7 +22,7 @@ public class AssessmentDemoSecond {
             driver.manage().window().maximize();    //maximize window
             driver.get("http://jupiter.cloud.planittesting.com");   //visit the URL
             driver.findElement(By.linkText("Contact")).click();     //click on contact page using linkText
-            driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
+            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3)); 
 
             //enter mandatory fields
             driver.findElement(By.id("forename")).sendKeys("Darvin Patel");
@@ -31,7 +30,7 @@ public class AssessmentDemoSecond {
             driver.findElement(By.id("message")).sendKeys("Excellent products, would buy again!");
 
             driver.findElement(By.xpath("/html/body/div[2]/div/form/div/a")).click();
-            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3)); 
 
             String exp = "Thanks Darvin Patel, we appreciate your feedback.";    //expected error text
             WebElement message = driver.findElement(By.className("alert-success")); //identify actual error message

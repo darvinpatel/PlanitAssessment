@@ -1,14 +1,13 @@
 package com.darvin;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import java.util.concurrent.TimeUnit;
+import java.time.Duration;
 
 public class AssessmentDemoThird {
 
@@ -24,7 +23,7 @@ public class AssessmentDemoThird {
 
             driver.get("http://jupiter.cloud.planittesting.com");   //visit the URL
             driver.findElement(By.linkText("Shop")).click();        //click on Shop
-            driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
+            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3)); 
 
             //add the products to the cart as required
             int item;
@@ -47,7 +46,7 @@ public class AssessmentDemoThird {
         String expPriceStuffedFrog = "$10.99";  //expected text
         expPriceStuffedFrog = expPriceStuffedFrog.substring(1); //removing the $ sign
 
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3)); 
 
         WebElement quantitySF = driver.findElement(By.xpath("/html/body/div[2]/div/form/table/tbody/tr[1]/td[3]/input"));
         String quantityStuffedFrog = quantitySF.getAttribute("value");  //grab the quantity
@@ -73,7 +72,7 @@ public class AssessmentDemoThird {
         String expPriceFluffyBunny = "$9.99";   //expected text
         expPriceFluffyBunny = expPriceFluffyBunny.substring(1);
 
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3)); 
         WebElement quantityFB = driver.findElement(By.xpath("/html/body/div[2]/div/form/table/tbody/tr[2]/td[3]/input"));
         String quantityFluffyBunny = quantityFB.getAttribute("value");
         float floatRounding = (float) (Math.round(Float.parseFloat(expPriceFluffyBunny) * Float.parseFloat(quantityFluffyBunny) * 100.0) / 100.0);
@@ -99,7 +98,7 @@ public class AssessmentDemoThird {
         String expPriceValentineBear = "$14.99";
         expPriceValentineBear = expPriceValentineBear.substring(1);
 
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3)); 
         WebElement quantityVB = driver.findElement(By.xpath("/html/body/div[2]/div/form/table/tbody/tr[3]/td[3]/input"));
         String quantityValentineBear = quantityVB.getAttribute("value");
         String expValentineBear = String.valueOf(Float.parseFloat(expPriceValentineBear) * Float.parseFloat(quantityValentineBear));

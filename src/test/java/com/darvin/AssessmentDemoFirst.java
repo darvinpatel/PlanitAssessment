@@ -2,7 +2,8 @@ package com.darvin;
 
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import java.util.concurrent.TimeUnit;
+
+import java.time.Duration;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
@@ -17,13 +18,12 @@ public class AssessmentDemoFirst {
             ChromeOptions options = new ChromeOptions();
             options.addArguments("--remote-allow-origins=*");
             ChromeDriver driver = new ChromeDriver(options);
-            //WebDriver driver = new ChromeDriver();      //initialise chrome browser
-            //WebDriver driver = new ChromeDriver();      //initialise chrome browser
+    
             driver.manage().window().maximize();        //maxmise window
 
             driver.get("http://jupiter.cloud.planittesting.com");       //visit the given URL
             driver.findElement(By.linkText("Contact")).click();         //visit contact page through linkText locator
-            driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);     //allow wait to load elements
+            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));     //allow wait to load elements
             driver.findElement(By.xpath("/html/body/div[2]/div/form/div/a")).click();   //click submit button to generate error fields
 
             String exp = "We welcome your feedback - but we won't get it unless you complete the form correctly.";  //expected error text
