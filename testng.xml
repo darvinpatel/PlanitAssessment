@@ -3,7 +3,9 @@
 <suite name="Suite">
   <test thread-count="5" name="Test2">   
     <classes>
-      <class name="AssessmentDemoFirst"/>      
+      <class name="AssessmentDemoFirst"/>
+      <class name="AssessmentDemoSecond"/>  
+      <class name="AssessmentDemoThird"/>  
     </classes>
   </test> 
   
