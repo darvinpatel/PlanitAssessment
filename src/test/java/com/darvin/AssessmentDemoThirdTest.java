@@ -9,7 +9,7 @@ import org.testng.annotations.Test;
 
 import java.time.Duration;
 
-public class AssessmentDemoThird {
+public class AssessmentDemoThirdTest {
 
     @Test
     public void thirdTestCase() {

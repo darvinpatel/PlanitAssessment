@@ -1,4 +1,4 @@
-package com.darvin;
+package com;
 
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -10,7 +10,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 
-public class AssessmentDemoFirst {
+public class AssessmentDemoFirstTest {
 
     @Test
     public void firstTestCase() {
