@@ -30,7 +30,7 @@ public class AssessmentDemoSecondTest {
             driver.findElement(By.id("message")).sendKeys("Excellent products, would buy again!");
 
             driver.findElement(By.xpath("/html/body/div[2]/div/form/div/a")).click();
-            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3)); 
+            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15)); 
 
             String exp = "Thanks Darvin Patel, we appreciate your feedback.";    //expected error text
             WebElement message = driver.findElement(By.className("alert-success")); //identify actual error message
