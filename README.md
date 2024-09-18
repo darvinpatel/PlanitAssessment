@@ -36,10 +36,26 @@ This repository contains automated tests for the Planit Jupiter Toys demo websit
 
 The project covers the following scenarios:
 
-- Adding products to the cart.
-- Removing items from the cart.
-- Form submission with validation errors.
-- Verifying product details and prices.
+1. Test case 1:
+- From the home page go to contact page
+- Click submit button
+- Verify error messages
+- Populate mandatory fields
+- Validate errors are gone
+
+2. Test case 2:
+- From the home page go to contact page
+- Populate mandatory fields
+- Click submit button
+- Validate successful submission message
+- Note: Run this test 5 times to ensure 100% pass rate
+
+3. Test case 3:
+- Buy 2 Stuffed Frog, 5 Fluffy Bunny, 3 Valentine Bear
+- Go to the cart page
+- Verify the subtotal for each product is correct
+- Verify the price for each product
+- Verify that total = sum(sub totals)
 
 ## Reporting
 After test execution, a detailed test report will be generated. You can access the report in the target/surefire-reports directory.
